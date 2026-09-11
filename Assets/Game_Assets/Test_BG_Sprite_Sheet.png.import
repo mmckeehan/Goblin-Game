@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjo52qgdnsmcm"
-path="res://.godot/imported/Rock.png-c87dccb550621c4e3defa180644a8d47.ctex"
+uid="uid://cdhcm44r6vhs"
+path="res://.godot/imported/Test_BG_Sprite_Sheet.png-7cc3558642ccaebd8db9fd750f7b930b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Rocks/Assets/Rock.png"
-dest_files=["res://.godot/imported/Rock.png-c87dccb550621c4e3defa180644a8d47.ctex"]
+source_file="res://Assets/Game_Assets/Test_BG_Sprite_Sheet.png"
+dest_files=["res://.godot/imported/Test_BG_Sprite_Sheet.png-7cc3558642ccaebd8db9fd750f7b930b.ctex"]
 
 [params]
 

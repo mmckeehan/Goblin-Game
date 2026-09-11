@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dsw3uj8ya7nis"]
+
+[ext_resource type="Script" uid="uid://b0s5ke471n0so" path="res://Scenes/Upgrade_screen/Buttons/Rock_Value_Up/rock_value_up_button_1.gd" id="1_aqp6g"]
+[ext_resource type="Texture2D" uid="uid://er74njerrv0f" path="res://Assets/Game_Assets/Rock_Value_Up.png" id="2_aqp6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k17my"]
+radius = 9.055386
+
+[sub_resource type="Animation" id="Animation_aqp6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_be1ke"]
+resource_name = "press"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(4, 4), Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gl2ff"]
+_data = {
+&"RESET": SubResource("Animation_aqp6g"),
+&"press": SubResource("Animation_be1ke")
+}
+
+[sub_resource type="Theme" id="Theme_k17my"]
+
+[node name="Rock_Value_Up_Button_1" type="Area2D" unique_id=1581190429]
+scale = Vector2(3, 3)
+script = ExtResource("1_aqp6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2096897072]
+texture = ExtResource("2_aqp6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=820809618]
+shape = SubResource("CircleShape2D_k17my")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=699803960]
+libraries/ = SubResource("AnimationLibrary_gl2ff")
+
+[node name="Tooltip" type="RichTextLabel" parent="." unique_id=1416786664]
+visible = false
+offset_left = 9.333332
+offset_top = -10.666666
+offset_right = 49.333332
+offset_bottom = 29.333334
+scale = Vector2(0.6436225, 0.61154175)
+theme = SubResource("Theme_k17my")
+theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0.9098039)
+theme_override_colors/selection_color = Color(0.101960786, 0.101960786, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 4
+text = "This will increase the value of the Rocks, but also make them stronger."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

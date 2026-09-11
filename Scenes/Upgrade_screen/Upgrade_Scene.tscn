@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bj36hys0rp5ct"]
+
+[ext_resource type="Script" uid="uid://bf830hxwtceqo" path="res://Scenes/Upgrade_screen/upgrade_scene.gd" id="1_no367"]
+[ext_resource type="FontFile" uid="uid://baemf061iocsr" path="res://Assets/Fonts/Pixel.ttf" id="1_yfuki"]
+[ext_resource type="PackedScene" uid="uid://hfjprayjw7u1" path="res://Scenes/Upgrade_screen/Buttons/Attack_Up_1/Attack_Up_Button_1.tscn" id="3_3eaeo"]
+[ext_resource type="PackedScene" uid="uid://cli2dmrb0dpjx" path="res://Scenes/Upgrade_screen/Buttons/Attack_Speed_Up_1/Attack_Speed_Up_Button_1.tscn" id="4_o6wmp"]
+[ext_resource type="PackedScene" uid="uid://d2e57315te13w" path="res://Scenes/Upgrade_screen/Buttons/Game_Time_up_1/Game_Time_Up_Button_1.tscn" id="5_blrfs"]
+[ext_resource type="PackedScene" uid="uid://0q81065a85vo" path="res://Scenes/Upgrade_screen/Buttons/Rock_Respawn_Rate/Rock_Respawn_Up_Button_1.tscn" id="6_qc3hk"]
+[ext_resource type="PackedScene" uid="uid://dsw3uj8ya7nis" path="res://Scenes/Upgrade_screen/Buttons/Rock_Value_Up/Rock_Value_Up_Button_1.tscn" id="7_b42ao"]
+
+[node name="Upgrade_Scene" type="Node" unique_id=1108346194 node_paths=PackedStringArray("_currency_label")]
+script = ExtResource("1_no367")
+_currency_label = NodePath("Current Score")
+
+[node name="Back_to_Game" type="Button" parent="." unique_id=2083257540]
+offset_left = 53.0
+offset_top = 583.0
+offset_right = 237.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("1_yfuki")
+theme_override_font_sizes/font_size = 26
+text = "Back to Game"
+
+[node name="Back_to_Title" type="Button" parent="." unique_id=136635919]
+offset_left = 263.0
+offset_top = 583.0
+offset_right = 450.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("1_yfuki")
+theme_override_font_sizes/font_size = 26
+text = "Back to Title"
+
+[node name="Current Score" type="Label" parent="." unique_id=1818802499]
+offset_left = 507.0
+offset_top = 10.0
+offset_right = 547.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Buttons" type="Node" parent="." unique_id=1698978646]
+
+[node name="Attack_Speed_Up_Button" parent="Buttons" unique_id=1581190429 instance=ExtResource("4_o6wmp")]
+position = Vector2(151, 169)
+
+[node name="Attack_up_button" parent="Buttons" unique_id=552984376 instance=ExtResource("3_3eaeo")]
+position = Vector2(149, 92.00001)
+
+[node name="Game_Time_Up_Button_1" parent="Buttons" unique_id=184806478 instance=ExtResource("5_blrfs")]
+position = Vector2(150, 247)
+
+[node name="Rock_Respawn_Up_Button_1" parent="Buttons" unique_id=151066128 instance=ExtResource("6_qc3hk")]
+position = Vector2(149, 326)
+
+[node name="Rock_Value_Up_Button_1" parent="Buttons" unique_id=559453465 instance=ExtResource("7_b42ao")]
+self_modulate = Color(0.46618116, 0.46618068, 0.46618092, 0.42352942)
+position = Vector2(150, 405)
+
+[connection signal="pressed" from="Back_to_Game" to="." method="_on_back_to_game_pressed"]
+[connection signal="pressed" from="Back_to_Title" to="." method="_on_back_to_title_pressed"]
+[connection signal="mouse_entered" from="Buttons/Attack_up_button" to="." method="_on_attack_up_button_mouse_entered"]
