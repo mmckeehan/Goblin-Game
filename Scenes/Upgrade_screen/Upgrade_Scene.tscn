@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://d2e57315te13w" path="res://Scenes/Upgrade_screen/Buttons/Game_Time_up_1/Game_Time_Up_Button_1.tscn" id="5_blrfs"]
 [ext_resource type="PackedScene" uid="uid://0q81065a85vo" path="res://Scenes/Upgrade_screen/Buttons/Rock_Respawn_Rate/Rock_Respawn_Up_Button_1.tscn" id="6_qc3hk"]
 [ext_resource type="PackedScene" uid="uid://dsw3uj8ya7nis" path="res://Scenes/Upgrade_screen/Buttons/Rock_Value_Up/Rock_Value_Up_Button_1.tscn" id="7_b42ao"]
+[ext_resource type="PackedScene" uid="uid://crsys8d8mbl5i" path="res://Scenes/Upgrade_screen/Buttons/Rock_Value_Up/Rock_Value_Up_Button_2.tscn" id="8_b42ao"]
+[ext_resource type="PackedScene" uid="uid://co38mpwdy5pip" path="res://Scenes/Upgrade_screen/Buttons/Rock_Value_Up/Rock_Value_Up_Button_3.tscn" id="8_ocaqm"]
+[ext_resource type="PackedScene" uid="uid://cf44iqnb3uwyl" path="res://Scenes/Upgrade_screen/Buttons/Rock_Respawn_Rate/Rock_Respawn_Up_Button_2.tscn" id="10_5a73g"]
+[ext_resource type="PackedScene" uid="uid://buhhiylg1lxtb" path="res://Scenes/Upgrade_screen/Buttons/Rock_Respawn_Rate/Rock_Respawn_Up_Button_3.tscn" id="11_08f5y"]
 
 [node name="Upgrade_Scene" type="Node" unique_id=1108346194 node_paths=PackedStringArray("_currency_label")]
 script = ExtResource("1_no367")
@@ -54,6 +58,18 @@ position = Vector2(149, 326)
 [node name="Rock_Value_Up_Button_1" parent="Buttons" unique_id=559453465 instance=ExtResource("7_b42ao")]
 self_modulate = Color(0.46618116, 0.46618068, 0.46618092, 0.42352942)
 position = Vector2(150, 405)
+
+[node name="Rock_Value_Up_Button_2" parent="Buttons" unique_id=1275623228 instance=ExtResource("8_ocaqm")]
+position = Vector2(331, 405)
+
+[node name="Rock_Value_Up_Button_3" parent="Buttons" unique_id=175381061 instance=ExtResource("8_b42ao")]
+position = Vector2(240, 406)
+
+[node name="Rock_Respawn_Up_Button_2" parent="Buttons" unique_id=764188061 instance=ExtResource("10_5a73g")]
+position = Vector2(241, 328)
+
+[node name="Rock_Respawn_Up_Button_3" parent="Buttons" unique_id=1061949349 instance=ExtResource("11_08f5y")]
+position = Vector2(333, 331)
 
 [connection signal="pressed" from="Back_to_Game" to="." method="_on_back_to_game_pressed"]
 [connection signal="pressed" from="Back_to_Title" to="." method="_on_back_to_title_pressed"]

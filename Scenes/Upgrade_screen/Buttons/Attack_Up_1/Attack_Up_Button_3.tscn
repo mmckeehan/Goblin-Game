@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://1dr0sn4v2ugu"]
+
+[ext_resource type="Script" uid="uid://cal4y6x7alum6" path="res://Scenes/Upgrade_screen/Buttons/Attack_Up_1/attack_up_button_3.gd" id="1_yl0os"]
+[ext_resource type="Texture2D" uid="uid://u16vhgxlealt" path="res://Assets/Game_Assets/Attack_Up_Sprite.png" id="2_fc7cc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k17my"]
+radius = 9.055386
+
+[sub_resource type="Animation" id="Animation_aqp6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_be1ke"]
+resource_name = "press"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(4, 4), Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7fs5"]
+_data = {
+&"RESET": SubResource("Animation_aqp6g"),
+&"press": SubResource("Animation_be1ke")
+}
+
+[node name="Attack_up_button" type="Area2D" unique_id=1581190429]
+scale = Vector2(3, 3)
+script = ExtResource("1_yl0os")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2096897072]
+texture = ExtResource("2_fc7cc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=820809618]
+shape = SubResource("CircleShape2D_k17my")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1714571127]
+libraries/ = SubResource("AnimationLibrary_i7fs5")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

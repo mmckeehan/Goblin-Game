@@ -17,7 +17,7 @@ var rock_worth: int  = 1
 # Main Game Variables
 var rock_spawn_time: float = 10
 var game_time: float = 10
-var score: int = 10
+var score: int = 100
 
 
 func add_score():

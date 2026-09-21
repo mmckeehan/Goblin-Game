@@ -13,14 +13,16 @@ func _process(delta):
 	
 func _attack_up():
 	var _current_upgrade_amount_count = ButtonGlobals.first_game_time_upgrade_count
+
 	if _current_upgrade_amount_count < _max_upgrade and _press_available and _upgrade_cost <= GameState.score:
 		if Input.is_action_just_pressed("mouse_click"):
 			GameState.game_time += _upgrade_amount
 			ButtonGlobals.first_game_time_upgrade_count += 1
-			GameState.score -= 1
+			GameState.score -= _upgrade_cost
 			anim.play("press")
 	if _current_upgrade_amount_count == _max_upgrade:
 		$Sprite2D.set_self_modulate("ffffff8d")
+		ButtonGlobals.second_game_time_upgrade_useable = true
 
 func _on_mouse_entered():
 	_press_available = true
