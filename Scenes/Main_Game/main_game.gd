@@ -2,7 +2,6 @@ extends Node
 
 # Scenes and paths
 var Base_Rock_Scene = preload("res://Rocks/Base_Rock.tscn")
-var Talent_Upgrade_Path: String = "res://Scenes/Upgrade_screen/Upgrade_Scene.tscn"
 
 # Timers
 @export var rock_respawn_timer: Timer
@@ -33,7 +32,7 @@ func _process(delta):
 	_spawn_base_rock()
 	score_display.text = "Currency: %s" % str(_score)
 	game_time_display.text = str(game_timer.time_left).left(4)
-	player_position.text = str(GameState.player_attack_multiplier)
+	player_position.text = str(GameState.player_attack_power)
 	
 func _spawn_base_rock():
 	var new_rock = Base_Rock_Scene.instantiate()
@@ -46,17 +45,14 @@ func _spawn_base_rock():
 func _end_round():
 	rock_respawn_timer.set_paused(true)
 	_remove_objects_at_round_end()
-	get_tree().change_scene_to_file(Talent_Upgrade_Path)
+	SceneManager.current_scene = SceneManager.SCENE.UPGRADE
 	
 func _remove_objects_at_round_end():
 	var all_rock_nodes: Array = rock_parent_node.get_children()
-	#remove_child(player)
 	for rock_node in all_rock_nodes:
 		rock_node.queue_free()
-	print("MAIN_GAME: Round Over")
 
 func _on_base_rock_destroyed():
-	print("MAIN: base_rock_destroyed accepted.")
 	GameState.add_score()
 
 func _on_game_timer_timeout():

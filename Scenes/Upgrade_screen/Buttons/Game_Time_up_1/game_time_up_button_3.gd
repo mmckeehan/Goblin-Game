@@ -3,9 +3,9 @@ extends Area2D
 # Button Variables
 var _upgrade_cost: int = 3
 var _max_upgrade: int = 5
-var _upgrade_amount:float = .5
+var _upgrade_amount:float = ButtonGlobals.third_game_time_upgrade_amount
 var _press_available: bool = false
-@onready var anim:AnimationPlayer = $AnimationPlayer
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	$Sprite2D.set_self_modulate("ffffff00")
@@ -22,7 +22,7 @@ func _attack_up():
 	if !_is_transparent:
 		$Sprite2D.set_self_modulate("ffffff")
 		if Input.is_action_just_pressed("mouse_click") and _upgrade:
-			GameState.rock_spawn_time -= _upgrade_amount
+			GameState.game_time += _upgrade_amount
 			ButtonGlobals.third_game_time_upgrade_count += 1
 			GameState.score -= _upgrade_cost
 			anim.play("press")

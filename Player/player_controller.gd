@@ -7,10 +7,7 @@ enum STATE{
 	ATTACK
 }
 
-# Scene/Script preloads
-#@onready var Upgrade_Scene = preload("res://Scenes/Upgrade_screen/Upgrade_Scene.tscn")
 
-# Node variables
 @onready var anim: AnimatedSprite2D = $Anims
 @onready var attack_timer: Timer = $Attack_Speed_Timer
 @export var pickaxe_collision: CollisionShape2D
@@ -21,9 +18,7 @@ var _speed: float = GameState.player_movement_speed
 
 # Attack variables
 var _attack_speed: float = GameState.player_attack_speed
-var _base_damage: float = 1.
-var attack_multiplier: float = GameState.player_attack_multiplier
-var attack_power: float = _base_damage * attack_multiplier
+var attack_power: float = GameState.player_attack_power
 
 func _ready():
 	# This set variables for the player when they spawn in.

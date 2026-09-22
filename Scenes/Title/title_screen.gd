@@ -1,16 +1,17 @@
 extends Node
 
-var Main_Game_Path: String = "res://Scenes/Main_Game/Main_Game.tscn"
-
-func _ready():
-	pass
-	#print(GameState.player_movement_speed)
-
 func _on_start_pressed():
-	print("TITLE: Start Button Pressed")
-	get_tree().change_scene_to_file(Main_Game_Path)
+	SceneManager.current_scene = SceneManager.SCENE.MAIN_GAME
 
 func _on_exit_pressed():
-	print("TITLE: Exit Pressed")
-	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
-	get_tree().quit()
+	SceneManager.current_scene = SceneManager.GAME_QUIT
+
+
+
+func _on_debug_end_pressed():
+	SceneManager.current_scene = SceneManager.SCENE.END_SCREEN
+
+
+func _on_debug_upgrade_pressed():
+	GameState.score = 500
+	SceneManager.current_scene = SceneManager.SCENE.UPGRADE

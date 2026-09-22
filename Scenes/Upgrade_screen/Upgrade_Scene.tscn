@@ -132,10 +132,10 @@ offset_bottom = 106.0
 text = "Price:"
 
 [node name="Label5" type="Label" parent="Score_Board" unique_id=368894224]
-offset_left = 41.0
-offset_top = 149.0
-offset_right = 181.0
-offset_bottom = 400.0
+offset_left = 39.0
+offset_top = 144.0
+offset_right = 179.0
+offset_bottom = 412.0
 text = "Attack UP
 
 
@@ -158,10 +158,10 @@ offset_bottom = 249.0
 text = "100"
 
 [node name="Rock Value" type="Label" parent="Score_Board" unique_id=1111619145]
-offset_left = 50.0
-offset_top = 487.0
-offset_right = 186.0
-offset_bottom = 522.0
+offset_left = 44.0
+offset_top = 473.0
+offset_right = 180.0
+offset_bottom = 527.0
 text = "Rock Value Up/
 Rock HP Up --- 10"
 

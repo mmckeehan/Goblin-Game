@@ -6,8 +6,6 @@ var _upgrade_amount:float = 1
 var _press_available: bool = false
 var _upgrade_cost: int = 100
 
-@onready var anim:AnimationPlayer = $AnimationPlayer
-
 func _ready():
 	$Sprite2D.set_self_modulate("ffffff00")
 
@@ -20,9 +18,7 @@ func _attack_up():
 
 	if _press_available and _upgrade_cost <= GameState.score:
 		if Input.is_action_just_pressed("mouse_click"):
-			GameState.score -= 100
-			anim.play("press")
-			ButtonGlobals.end_game_button_pressed = true
+			SceneManager.current_scene = SceneManager.SCENE.END_SCREEN
 
 func _on_mouse_entered():
 	_press_available = true

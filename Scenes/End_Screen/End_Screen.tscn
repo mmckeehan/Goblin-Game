@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cuoov5n3hqtj0"]
+
+[ext_resource type="Texture2D" uid="uid://g3anjfkmru72" path="res://Assets/Game_Assets/Chicken_Dinner.PNG" id="1_2cwlo"]
+[ext_resource type="Script" uid="uid://nf83r4l0t2vi" path="res://Scenes/End_Screen/end_screen.gd" id="1_tbd4e"]
+
+[node name="EndScreen" type="Node2D" unique_id=2115848304]
+script = ExtResource("1_tbd4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381137490]
+position = Vector2(558, 333)
+scale = Vector2(10, 10)
+texture = ExtResource("1_2cwlo")
+
+[node name="Label" type="Label" parent="." unique_id=567966752]
+offset_left = 390.0
+offset_top = 146.0
+offset_right = 430.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 84
+text = "Chicken"
+
+[node name="Label2" type="Label" parent="." unique_id=522661621]
+offset_left = 416.0
+offset_top = 417.0
+offset_right = 700.0
+offset_bottom = 501.0
+theme_override_font_sizes/font_size = 84
+text = "Dinner"
+
+[node name="Exit_Button" type="Button" parent="." unique_id=1681450228]
+offset_left = 36.0
+offset_top = 595.0
+offset_right = 94.0
+offset_bottom = 603.0
+text = "Exit"
+
+[node name="Restart_Button" type="Button" parent="." unique_id=1418953817]
+offset_left = 111.0
+offset_top = 595.0
+offset_right = 183.0
+offset_bottom = 619.0
+text = "Restart"
+
+[connection signal="pressed" from="Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Restart_Button" to="." method="_on_restart_button_pressed"]
