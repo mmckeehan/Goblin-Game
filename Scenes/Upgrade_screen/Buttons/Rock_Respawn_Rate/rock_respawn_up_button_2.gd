@@ -1,7 +1,7 @@
 extends Area2D
 
 # Button Variables
-var _upgrade_cost: int = 1
+var _upgrade_cost: int = 2
 var _max_upgrade: int = 5
 var _upgrade_amount:float = .5
 var _press_available: bool = false

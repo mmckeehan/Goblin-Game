@@ -1,7 +1,7 @@
 extends Area2D
 
 # Button Variables
-var _upgrade_cost: int = 1
+var _upgrade_cost: int = 2
 var _max_upgrade: int = 5
 var _upgrade_amount:float = .5
 var _press_available: bool = false
@@ -12,7 +12,6 @@ func _ready():
 
 func _process(delta):
 	if ButtonGlobals.second_game_time_upgrade_useable:
-		print("useable")
 		_attack_up()
 	
 func _attack_up():

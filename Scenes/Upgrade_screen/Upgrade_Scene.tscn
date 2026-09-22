@@ -11,6 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://co38mpwdy5pip" path="res://Scenes/Upgrade_screen/Buttons/Rock_Value_Up/Rock_Value_Up_Button_3.tscn" id="8_ocaqm"]
 [ext_resource type="PackedScene" uid="uid://cf44iqnb3uwyl" path="res://Scenes/Upgrade_screen/Buttons/Rock_Respawn_Rate/Rock_Respawn_Up_Button_2.tscn" id="10_5a73g"]
 [ext_resource type="PackedScene" uid="uid://buhhiylg1lxtb" path="res://Scenes/Upgrade_screen/Buttons/Rock_Respawn_Rate/Rock_Respawn_Up_Button_3.tscn" id="11_08f5y"]
+[ext_resource type="PackedScene" uid="uid://bn3ombi4l7yeo" path="res://Scenes/Upgrade_screen/Buttons/Game_Time_up_1/Game_Time_Up_Button_2.tscn" id="12_go5lj"]
+[ext_resource type="PackedScene" uid="uid://dekjl2v4jq71e" path="res://Scenes/Upgrade_screen/Buttons/Game_Time_up_1/Game_Time_Up_Button_3.tscn" id="13_7pyue"]
+[ext_resource type="PackedScene" uid="uid://clq05ixu7m5a0" path="res://Scenes/Upgrade_screen/Buttons/Attack_Up_1/Attack_Up_Button_2.tscn" id="14_rmam3"]
+[ext_resource type="PackedScene" uid="uid://1dr0sn4v2ugu" path="res://Scenes/Upgrade_screen/Buttons/Attack_Up_1/Attack_Up_Button_3.tscn" id="15_eqk6l"]
+[ext_resource type="PackedScene" uid="uid://b4o5uba8e5o8o" path="res://Scenes/Upgrade_screen/Buttons/Attack_Speed_Up_1/Attack_Speed_Up_Button_2.tscn" id="16_2wsck"]
+[ext_resource type="PackedScene" uid="uid://dl35bjcavmxel" path="res://Scenes/Upgrade_screen/Buttons/Attack_Speed_Up_1/Attack_Speed_Up_Button_3.tscn" id="17_vu7wx"]
+[ext_resource type="PackedScene" uid="uid://7hlcunqdv0ww" path="res://Scenes/Upgrade_screen/Buttons/End_Game_Button/End_Game_Button.tscn" id="18_rmam3"]
+[ext_resource type="Script" uid="uid://h1wpc7q3ood6" path="res://Scenes/Upgrade_screen/score_board.gd" id="19_eqk6l"]
 
 [node name="Upgrade_Scene" type="Node" unique_id=1108346194 node_paths=PackedStringArray("_currency_label")]
 script = ExtResource("1_no367")
@@ -43,33 +51,119 @@ theme_override_font_sizes/font_size = 25
 
 [node name="Buttons" type="Node" parent="." unique_id=1698978646]
 
-[node name="Attack_Speed_Up_Button" parent="Buttons" unique_id=1581190429 instance=ExtResource("4_o6wmp")]
-position = Vector2(151, 169)
+[node name="Attack_up_button3" parent="Buttons" unique_id=458781128 instance=ExtResource("15_eqk6l")]
+position = Vector2(735, 157)
+
+[node name="Attack_up_button2" parent="Buttons" unique_id=1439760262 instance=ExtResource("14_rmam3")]
+position = Vector2(508, 153)
 
 [node name="Attack_up_button" parent="Buttons" unique_id=552984376 instance=ExtResource("3_3eaeo")]
-position = Vector2(149, 92.00001)
+position = Vector2(249, 150)
+
+[node name="Attack_Speed_Up_Button" parent="Buttons" unique_id=1581190429 instance=ExtResource("4_o6wmp")]
+position = Vector2(251, 227)
+
+[node name="Attack_Speed_Up_Button2" parent="Buttons" unique_id=1590003137 instance=ExtResource("16_2wsck")]
+position = Vector2(507, 228)
+
+[node name="Attack_Speed_Up_Button3" parent="Buttons" unique_id=1493217667 instance=ExtResource("17_vu7wx")]
+position = Vector2(734, 234)
 
 [node name="Game_Time_Up_Button_1" parent="Buttons" unique_id=184806478 instance=ExtResource("5_blrfs")]
-position = Vector2(150, 247)
+position = Vector2(250, 305)
+
+[node name="Game_Time_Up_Button_2" parent="Buttons" unique_id=1207196306 instance=ExtResource("12_go5lj")]
+position = Vector2(508, 311)
+
+[node name="Game_Time_Up_Button_3" parent="Buttons" unique_id=1695558424 instance=ExtResource("13_7pyue")]
+position = Vector2(735, 309)
 
 [node name="Rock_Respawn_Up_Button_1" parent="Buttons" unique_id=151066128 instance=ExtResource("6_qc3hk")]
-position = Vector2(149, 326)
+position = Vector2(249, 384)
+
+[node name="Rock_Respawn_Up_Button_2" parent="Buttons" unique_id=764188061 instance=ExtResource("10_5a73g")]
+position = Vector2(509, 389)
+
+[node name="Rock_Respawn_Up_Button_3" parent="Buttons" unique_id=1061949349 instance=ExtResource("11_08f5y")]
+position = Vector2(737, 391)
 
 [node name="Rock_Value_Up_Button_1" parent="Buttons" unique_id=559453465 instance=ExtResource("7_b42ao")]
 self_modulate = Color(0.46618116, 0.46618068, 0.46618092, 0.42352942)
-position = Vector2(150, 405)
+position = Vector2(369, 503)
 
 [node name="Rock_Value_Up_Button_2" parent="Buttons" unique_id=1275623228 instance=ExtResource("8_ocaqm")]
-position = Vector2(331, 405)
+position = Vector2(857.00006, 499)
 
 [node name="Rock_Value_Up_Button_3" parent="Buttons" unique_id=175381061 instance=ExtResource("8_b42ao")]
-position = Vector2(240, 406)
+position = Vector2(636, 503)
 
-[node name="Rock_Respawn_Up_Button_2" parent="Buttons" unique_id=764188061 instance=ExtResource("10_5a73g")]
-position = Vector2(241, 328)
+[node name="End_Game_Button" parent="Buttons" unique_id=1806977834 instance=ExtResource("18_rmam3")]
+position = Vector2(1005, 281)
 
-[node name="Rock_Respawn_Up_Button_3" parent="Buttons" unique_id=1061949349 instance=ExtResource("11_08f5y")]
-position = Vector2(333, 331)
+[node name="Score_Board" type="Node" parent="." unique_id=1550346790]
+script = ExtResource("19_eqk6l")
+
+[node name="1" type="Label" parent="Score_Board" unique_id=1764159455]
+offset_left = 243.0
+offset_top = 88.0
+offset_right = 252.0
+offset_bottom = 104.0
+text = "1"
+
+[node name="2" type="Label" parent="Score_Board" unique_id=1561845110]
+offset_left = 505.0
+offset_top = 90.0
+offset_right = 515.0
+offset_bottom = 106.0
+text = "2"
+
+[node name="3" type="Label" parent="Score_Board" unique_id=1969007742]
+offset_left = 729.0
+offset_top = 97.0
+offset_right = 739.0
+offset_bottom = 113.0
+text = "3"
+
+[node name="Label4" type="Label" parent="Score_Board" unique_id=186537486]
+offset_left = 43.0
+offset_top = 90.0
+offset_right = 91.0
+offset_bottom = 106.0
+text = "Price:"
+
+[node name="Label5" type="Label" parent="Score_Board" unique_id=368894224]
+offset_left = 41.0
+offset_top = 149.0
+offset_right = 181.0
+offset_bottom = 400.0
+text = "Attack UP
+
+
+
+Attack Speed Up
+
+
+
+Game Time Up
+
+
+
+Rock Respawn Up"
+
+[node name="100" type="Label" parent="Score_Board" unique_id=1769360965]
+offset_left = 985.0
+offset_top = 226.0
+offset_right = 1014.0
+offset_bottom = 249.0
+text = "100"
+
+[node name="Rock Value" type="Label" parent="Score_Board" unique_id=1111619145]
+offset_left = 50.0
+offset_top = 487.0
+offset_right = 186.0
+offset_bottom = 522.0
+text = "Rock Value Up/
+Rock HP Up --- 10"
 
 [connection signal="pressed" from="Back_to_Game" to="." method="_on_back_to_game_pressed"]
 [connection signal="pressed" from="Back_to_Title" to="." method="_on_back_to_title_pressed"]

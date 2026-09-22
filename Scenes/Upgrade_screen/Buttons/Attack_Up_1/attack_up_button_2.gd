@@ -1,7 +1,7 @@
 extends Area2D
 
 # Button Variables
-var _upgrade_cost: int = 1
+var _upgrade_cost: int = 2
 var _max_upgrade: int = 5
 var _upgrade_amount:float = .5
 var _press_available: bool = false
@@ -11,7 +11,7 @@ func _ready():
 	$Sprite2D.set_self_modulate("ffffff00")
 
 func _process(delta):
-	if ButtonGlobals.second_attack_powergrade_useable:
+	if ButtonGlobals.second_attack_power_upgrade_useable:
 		_attack_up()
 	
 func _attack_up():
