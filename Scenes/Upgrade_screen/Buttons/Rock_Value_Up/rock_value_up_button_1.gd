@@ -25,6 +25,7 @@ func _attack_up():
 		anim.play("press")
 	if _current_upgrade_amount_count == _max_upgrade:
 		$Sprite2D.set_self_modulate("ffffff8d")
+		ButtonGlobals.second_rock_value_upgrade_useable = true
 		
 func _able_to_upgrade(_upgrade_count):
 	var _cost_check: bool = false
