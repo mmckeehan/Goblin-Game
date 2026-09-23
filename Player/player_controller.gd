@@ -11,6 +11,7 @@ enum STATE{
 @onready var anim: AnimatedSprite2D = $Anims
 @onready var attack_timer: Timer = $Attack_Speed_Timer
 @export var pickaxe_collision: CollisionShape2D
+@onready var pickaxe_sound_hit: AudioStreamPlayer = $Pickaxe_Hit
 
 # State and Movement Variables
 var _active_state: STATE = STATE.DEFAULT
@@ -18,7 +19,7 @@ var _speed: float = GameState.player_movement_speed
 
 # Attack variables
 var _attack_speed: float = GameState.player_attack_speed
-var attack_power: float = GameState.player_attack_power
+var attack_power: float
 
 func _ready():
 	# This set variables for the player when they spawn in.
@@ -29,6 +30,8 @@ func _physics_process(delta):
 	var direction_input = Input.get_vector("left","right","up","down")
 	var attack_input = Input.is_action_just_pressed("attack")
 
+	attack_power = GameState.player_attack_power
+
 	match _active_state:
 		STATE.DEFAULT:
 			_movement(direction_input)
@@ -38,6 +41,7 @@ func _physics_process(delta):
 		STATE.ATTACK:
 			if anim.is_playing() == false:
 				_switch_state(STATE.DEFAULT)
+				print("PLAYER: Attack Power: ", attack_power)
 
 	move_and_slide()
 	
@@ -84,3 +88,4 @@ func _on_pickaxe_hitbox_body_entered(body):
 	# This function is used to detect when another body enters the hitbox.
 	if body.has_method("take_damage"):
 		body.take_damage(attack_power)
+		pickaxe_sound_hit.play()

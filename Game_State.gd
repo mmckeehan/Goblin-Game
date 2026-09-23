@@ -5,7 +5,8 @@ extends Node
 # Player Variables
 var player_attack_speed: float = 3
 var player_attack_multiplier: float = 1
-var player_attack_power: float = .75 * player_attack_multiplier
+var player_base_attack_power: float = .75
+var player_attack_power: float
 var player_movement_speed: float = 100
 
 # Rock Variables
@@ -17,6 +18,9 @@ var rock_spawn_time: float = 8
 var game_time: float = 10
 var score: int = 500
 
+func _process(delta):
+	# This function is used to update the player attack power based on the current multiplier.
+	player_attack_power = .75 * player_attack_multiplier
 
 func add_score():
 	score += rock_worth

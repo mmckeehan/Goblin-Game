@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfllfhmdrl0bg"]
+
+[ext_resource type="Script" uid="uid://byhyo0bvskwtp" path="res://Scenes/Music_Controller/back_ground_music.gd" id="1_oq7s0"]
+[ext_resource type="AudioStream" uid="uid://byogk83iig78l" path="res://Assets/Sounds/653714__josefpres__8-bit-game-loop-003-simple-mix-1-long-16-bit-120-bpm.wav" id="2_txeup"]
+
+[node name="BackGroundMusic" type="Node2D" unique_id=729444389]
+script = ExtResource("1_oq7s0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1488788130]
+stream = ExtResource("2_txeup")
+volume_db = -8.412
+autoplay = true

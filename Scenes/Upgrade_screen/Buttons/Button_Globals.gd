@@ -24,9 +24,9 @@ var third_attack_speed_upgrade_useable: bool = false
 var first_rock_respawn_upgrade_count: int = 0
 var second_rock_respawn_upgrade_count: int = 0
 var third_rock_respawn_upgrade_count: int = 0
-var first_rock_respawn_upgrade_amount: float = .5
-var second_rock_respawn_upgrade_amount: float = .75
-var third_rock_respawn_upgrade_amount: float = .1
+var first_rock_respawn_upgrade_amount: float = .75
+var second_rock_respawn_upgrade_amount: float = 1
+var third_rock_respawn_upgrade_amount: float = 1.25
 var second_rock_respawn_upgrade_useable: bool = false
 var third_rock_respawn_upgrade_useable: bool = false
 

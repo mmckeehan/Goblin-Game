@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2afi45esbkq4" path="res://Rocks/base_rock.gd" id="1_eln1l"]
 [ext_resource type="Texture2D" uid="uid://di7vfjiupox3k" path="res://Assets/Rock_Assets/Basic_Rock.png" id="2_6lnqh"]
+[ext_resource type="AudioStream" uid="uid://ct4jmhtu1yg8l" path="res://Assets/Sounds/711657__discofield__stone-crash.wav" id="3_tmss8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um4ib"]
 size = Vector2(15, 12)
@@ -113,5 +114,8 @@ shape = SubResource("RectangleShape2D_k17my")
 
 [node name="Timer" type="Timer" parent="." unique_id=1829904490]
 one_shot = true
+
+[node name="Rock_Break" type="AudioStreamPlayer" parent="." unique_id=1089749287]
+stream = ExtResource("3_tmss8")
 
 [connection signal="base_rock_destroyed" from="." to="." method="_on_base_rock_destroyed"]
