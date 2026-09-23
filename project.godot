@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Project_53"
+config/name="Goblin Game"
 run/main_scene="uid://bb2dquwnwgqbn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
@@ -19,15 +19,17 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 GameState="*uid://bjrsbjt0rq7po"
 SceneManager="*uid://h20sbt2xm5il"
 ButtonGlobals="*uid://basnmrebqenmg"
+BackGroundMusic="*uid://bfllfhmdrl0bg"
 
 [display]
 
+window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [dotnet]
 
-project/assembly_name="Project_53"
+project/assembly_name="Goblin Game"
 
 [global_group]
 
@@ -79,9 +81,11 @@ mouse_click={
 2d_physics/layer_15="FOR WALKING THROUGH OBJECTS -- DO NOT USE"
 2d_physics/layer_16="WorldBoundries"
 
-[physics]
+[navigation]
 
-3d/physics_engine="Jolt Physics"
+3d/warnings/navmesh_edge_merge_errors=false
+3d/warnings/navmesh_cell_size_mismatch=false
+3d/use_edge_connections=false
 
 [rendering]
 

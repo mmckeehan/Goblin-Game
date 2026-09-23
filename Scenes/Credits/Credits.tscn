@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bc1yjyar2oo2k"]
+
+[ext_resource type="Script" uid="uid://bu3seavfkll2e" path="res://Scenes/Credits/credits.gd" id="1_mdxjw"]
+
+[node name="Credits" type="Node2D" unique_id=1634221969]
+script = ExtResource("1_mdxjw")
+
+[node name="Label" type="Label" parent="." unique_id=1740019632]
+offset_left = 164.0
+offset_top = 218.0
+offset_right = 1041.0
+offset_bottom = 367.0
+text = "Thanks to the following for allowing me to use their creation for the game:
+
+8 bit game loop 003  simple mix 1 long 16 bit 120 bpm.wav by josefpres -- https://freesound.org/s/653714/ -- License: Creative Commons 0
+
+Stone hit by CamoMano -- https://freesound.org/s/431019/ -- License: Creative Commons 0
+
+Stone crash by discofield -- https://freesound.org/s/711657/ -- License: Creative Commons 0"
+autowrap_mode = 3
+
+[node name="Title" type="Button" parent="." unique_id=954318379]
+offset_left = 489.0
+offset_top = 549.0
+offset_right = 603.0
+offset_bottom = 589.0
+text = "Back to title"
+
+[connection signal="pressed" from="Title" to="." method="_on_title_pressed"]

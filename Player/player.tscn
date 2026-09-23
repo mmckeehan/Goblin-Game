@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bjr1ex110g2fm" path="res://Assets/Player_Assets/Player_Sprite_Sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d1hug0cu1hurc" path="res://Player/player_controller.gd" id="1_4ntmi"]
+[ext_resource type="AudioStream" uid="uid://dm0rght65vdq" path="res://Assets/Sounds/431019__camomano__stone-hit.wav" id="3_btcbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k17my"]
 size = Vector2(10, 14)
@@ -120,5 +121,9 @@ collision_mask = 4
 position = Vector2(7.5, -0.5)
 shape = SubResource("RectangleShape2D_um4ib")
 debug_color = Color(0.8697175, 0.33180502, 0.314307, 0.41960785)
+
+[node name="Pickaxe_Hit" type="AudioStreamPlayer" parent="." unique_id=743190981]
+stream = ExtResource("3_btcbx")
+volume_db = 1.0
 
 [connection signal="body_entered" from="Pickaxe_Hitbox" to="." method="_on_pickaxe_hitbox_body_entered"]

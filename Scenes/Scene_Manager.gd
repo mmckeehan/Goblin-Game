@@ -6,6 +6,7 @@ enum SCENE{
 	MAIN_GAME,
 	UPGRADE,
 	END_SCREEN,
+	CREDITS,
 	GAME_QUIT
 }
 
@@ -17,7 +18,7 @@ var previous_scene: SCENE = -1
 @onready var main_game: PackedScene = preload("res://Scenes/Main_Game/Main_Game.tscn")
 @onready var upgrade_screen: PackedScene = preload("res://Scenes/Upgrade_screen/Upgrade_Scene.tscn")
 @onready var end_screen: PackedScene = preload("res://Scenes/End_Screen/End_Screen.tscn")
-
+@onready var credits: PackedScene = preload("res://Scenes/Credits/Credits.tscn")
 	
 func _process(delta):
 	if current_scene != previous_scene:
@@ -25,20 +26,19 @@ func _process(delta):
 		previous_scene = current_scene
 
 func _switch_scene():
+	# This is used to switch between the different scenes in the game. It uses the current_scene variable to determine which scene to switch to.
 	match current_scene:
 		SCENE.TITLE_SCREEN:
 			get_tree().change_scene_to_packed(title_screen)
 			GameState.reset_game_state() # Reset the game state when returning to the title screen
 			ButtonGlobals.reset_upgrades() # Reset the upgrade counts when returning to the title screen
-			print("SCENE MANAGER: Switched scene to Title")
 		SCENE.MAIN_GAME:
 			get_tree().change_scene_to_packed(main_game)
-			print("SCENE MANAGER: Switched scene to Main Game")
 		SCENE.UPGRADE:
 			get_tree().change_scene_to_packed(upgrade_screen)
-			print("SCENE MANAGER: Switched scene to Upgrade")
 		SCENE.END_SCREEN:
 			get_tree().change_scene_to_packed(end_screen)
-			print("SCENE MANAGER: Switched scene to Winner")
+		SCENE.CREDITS:
+			get_tree().change_scene_to_packed(credits)
 		SCENE.GAME_QUIT:
 			get_tree().quit()

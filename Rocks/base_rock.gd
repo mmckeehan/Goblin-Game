@@ -18,6 +18,7 @@ var current_health: float
 # STATE and Animation Variables
 @onready var active_state = STATE.DEFAULT
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var rock_break_sound: AudioStreamPlayer = $Rock_Break
 
 func _ready():
 	current_health = health
@@ -45,6 +46,7 @@ func _switch_state(to_state: STATE) -> void:
 			anim.play("Default")
 		STATE.BREAK:
 			anim.play("Break")
+			rock_break_sound.play()
 		STATE.DESTROY:
 			queue_free()
 
