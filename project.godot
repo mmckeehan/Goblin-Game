@@ -23,7 +23,6 @@ BackGroundMusic="*uid://bfllfhmdrl0bg"
 
 [display]
 
-window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
