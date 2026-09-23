@@ -15,7 +15,7 @@ func _process(delta):
 func _speed_up():
 	var _current_upgrade_amount_count = ButtonGlobals.first_attack_speed_upgrade_count
 	
-	if _current_upgrade_amount_count < _max_upgrade and _press_available:
+	if _current_upgrade_amount_count < _max_upgrade and _press_available and _upgrade_cost <= GameState.score:
 		if Input.is_action_just_pressed("mouse_click"):
 			GameState.player_attack_speed -= _upgrade_amount
 			ButtonGlobals.first_attack_speed_upgrade_count += 1
