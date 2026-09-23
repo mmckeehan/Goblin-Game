@@ -18,7 +18,7 @@ var _speed: float = GameState.player_movement_speed
 
 # Attack variables
 var _attack_speed: float = GameState.player_attack_speed
-var attack_power: float = GameState.player_attack_power
+var attack_power: float
 
 func _ready():
 	# This set variables for the player when they spawn in.
@@ -28,6 +28,8 @@ func _physics_process(delta):
 	#This is the main loop function for the player
 	var direction_input = Input.get_vector("left","right","up","down")
 	var attack_input = Input.is_action_just_pressed("attack")
+
+	attack_power = GameState.player_attack_power
 
 	match _active_state:
 		STATE.DEFAULT:
